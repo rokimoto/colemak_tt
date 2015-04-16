@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "courier new";
+	background: url('../images/lightpaperfibers.png');
+}
+.box-wrapper {
+	font-size: 2em;
+	width: 1000px;
+	height: 120px;
+  	position: absolute;
+  	top: 47%;
+  	left: 50%;
+  	margin: -50px 0 0 -500px;
+}
+
+.exercise-box, .input-box {
+	border: 1px solid black;
+	height: 60px;
+	width: 100%;
+	margin-top: 10px;
+	padding: 10px 15px 0;
+	background-color: rgba(255,255,255,.8);
+
+}
+
+.hidden-box {
+	height: 60px;
+	width: 100%;
+	margin-top: 10px;
+	padding: 10px 15px 0;
+	position: relative;
+	top: -70px;
+}
+
+.block {
+	background-color: black;
+}
