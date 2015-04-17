@@ -1,30 +1,35 @@
-(function() {
+ $(document).ready(function() {
 
 	function Game(level) {
 		self = this;
-		self.level = level;
 		self.init = init;
 
 		var counter = 0;
+		var seconds = 0;
 
-		ex = document.getElementById("exerciseBox");
-		inn = document.getElementById("inputBox");
-		hid = document.getElementById("hiddenBox");
-		ex.innerHTML = self.level;
+		// grabs page elements
+		var ex = document.getElementById("exerciseBox");
+		var inn = document.getElementById("inputBox");
+		var hid = document.getElementById("hiddenBox");
+		var ip = document.getElementById("textBox");
+
+
+
+		ip.value = "hi";
+
+		// sets input boxes
 		inn.innerHTML = "";
 		hid.innerHTML = "|";
-		hid.style.paddingLeft = "0.6em";
+		hid.style.paddingLeft = "0.55em";
+		self.level = ex.innerHTML;
 
+		// starts timer
+		function timer () {
+			seconds += 1;
+			clockRun = setTimeout(timer, 1000);
+		};
 
-		function moveCursor() {
-			var padding = hid.style.paddingLeft;
-			padding = parseFloat(padding);
-			console.log(padding);
-			padding += 0.6;
-			padding += "em";
-			hid.style.paddingLeft = padding;
-		}
-
+		// displays the letter typed in the input box
 		function displayLetter(letter) {
 			if (counter === 0) {
 				timer();
@@ -41,6 +46,26 @@
 			counter++;
 		}
 
+		// calculates grossWPM
+		function calculateGrossWpm(seconds) {
+			var totalChars = self.level.length;
+			var minutes = seconds / 60;
+			var grossWpm = (totalChars / 5) / minutes;
+			return grossWpm;
+		}	
+
+
+		// calculates netWPM
+		function calculateNetWpm(errors, seconds) {
+			var totalChars = self.level.length;
+			var minutes = seconds / 60;
+			// var grossWpm = (totalChars / 5) * (seconds/60)
+			var netWpm = ((totalChars/5) - errors) / minutes;
+			// var netWpm = grossWpm - (errors / minutes);
+			return netWpm;
+		}		
+
+		// calculates how many errors
 		function calculateErrors() {
 			var errors = 0;
 			var realChars = $(ex).text();
@@ -56,25 +81,30 @@
 					}
 				}
 			}
-			alert(errors + " MISTAKES IN " + seconds + "SECONDS");
+			var grossWpm = calculateGrossWpm(seconds)
+			var netWpm = calculateNetWpm(errors, seconds);
+			alert(grossWpm + " WPM adjusted to " + netWpm + " WPM");
+
 		}
 
-		var seconds = 0;
-		function timer () {
-			seconds += 1;
-			clockRun = setTimeout(timedCount, 1000);
-		};
 
 
+		// moves cursor
+		function moveCursor() {
+			var padding = hid.style.paddingLeft;
+			padding = parseFloat(padding);
+			console.log(padding);
+			padding += 0.6;
+			padding += "em";
+			hid.style.paddingLeft = padding;
+		}
 
+		// checks keycode and puts appropriate letter
 		function inputLetter(e) {
+			e.preventDefault();
 			if (counter < self.level.length) {
-				e.preventDefault();
+				
 				var kCode = e.keyCode;
-
-
-
-
 				switch (kCode) {
 					case 65:
 						displayLetter("a");
@@ -169,6 +199,7 @@
 					default:
 						console.log("other");
 				}
+
 				if (counter == self.level.length) {
 					clearTimeout(clockRun);
 					calculateErrors();
@@ -176,22 +207,13 @@
 			}
 		}
 
-
-
-
-
-
-
+		// initializes game
 		function init() {
 			window.addEventListener("keydown", inputLetter);
 		}
 
 	}
 
-	var level1 = "trite stress sire it entire terse tit sir tire sinner retire rinse inn tree";
-	var level2 = "trite stress sire it entire terse tit sir tire";
-
-	game = new Game(level1);
+	game = new Game();
 	game.init();
-
-})();
+});

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'users#new'
+  get 'levels' => "levels#index"
+  get 'levels/:id' => "levels#show", as: :level
+
   get 'login' => "sessions#new"
   post 'login' => "sessions#create"
   delete 'sessions' => "sessions#destroy"

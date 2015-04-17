@@ -1,0 +1,26 @@
+<h1><%= @level.name %></h1>
+
+
+
+
+
+<div class="container">
+	<div class="box-wrapper">
+		<div class="exercise-box" id="exerciseBox"><%= @level.content %></div>
+		<div class="input-wrapper">
+			<div class="input-box" id="inputBox">
+			</div>
+			<div class="hidden-box" id="hiddenBox">
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= form_tag do %>
+<%= text_field_tag :name, params[:name], id: 'textBox', disabled: true %>
+<% end %>
+
+
+<%= link_to "Go Back", levels_path %>
+
+
