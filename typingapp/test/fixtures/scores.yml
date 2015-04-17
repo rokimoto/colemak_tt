@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wpm: 1
+  time: 2015-04-16 16:53:27
+
+two:
+  wpm: 1
+  time: 2015-04-16 16:53:27

@@ -7,8 +7,6 @@
 
 		var counter = 0;
 
-		// remove later
-		self.level = "sets tens ten tnt sestet tenet seen nene testee";
 		ex = document.getElementById("exerciseBox");
 		inn = document.getElementById("inputBox");
 		hid = document.getElementById("hiddenBox");
@@ -166,7 +164,10 @@ console.log(padding);
 
 	}
 
-	game = new Game;
+	var level1 = "sets tens ten tnt sestet tenet seen nene testee";
+	var level2 = "trite stress sire it entire terse tit sir tire";
+
+	game = new Game(level1);
 	game.init();
 
 })();
