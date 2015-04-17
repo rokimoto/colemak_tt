@@ -11,16 +11,16 @@
 		var ex = document.getElementById("exerciseBox");
 		var inn = document.getElementById("inputBox");
 		var hid = document.getElementById("hiddenBox");
-		var ip = document.getElementById("textBox");
+		var modalWpm = document.getElementById("modalWpm");
 
+		var wpmBox = document.getElementById("WpmBox");
+		wpmBox.readOnly = true;
 
-
-		ip.value = "hi";
 
 		// sets input boxes
 		inn.innerHTML = "";
 		hid.innerHTML = "|";
-		hid.style.paddingLeft = "0.55em";
+		hid.style.paddingLeft = "0.6em";
 		self.level = ex.innerHTML;
 
 		// starts timer
@@ -51,6 +51,7 @@
 			var totalChars = self.level.length;
 			var minutes = seconds / 60;
 			var grossWpm = (totalChars / 5) / minutes;
+			grossWpm = Math.ceil(grossWpm);
 			return grossWpm;
 		}	
 
@@ -62,6 +63,7 @@
 			// var grossWpm = (totalChars / 5) * (seconds/60)
 			var netWpm = ((totalChars/5) - errors) / minutes;
 			// var netWpm = grossWpm - (errors / minutes);
+			netWpm = Math.ceil(netWpm);
 			return netWpm;
 		}		
 
@@ -83,8 +85,10 @@
 			}
 			var grossWpm = calculateGrossWpm(seconds)
 			var netWpm = calculateNetWpm(errors, seconds);
-			alert(grossWpm + " WPM adjusted to " + netWpm + " WPM");
-
+			wpmBox.value = grossWpm;
+			modalWpm.innerHTML = grossWpm + " WPM with " + errors + " errors adjusted to " + netWpm + " WPM";
+			// alert(grossWpm + " WPM adjusted to " + netWpm + " WPM");
+			$('#myModal').foundation('reveal', 'open');
 		}
 
 

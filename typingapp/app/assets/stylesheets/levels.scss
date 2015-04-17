@@ -9,9 +9,13 @@ body {
 	font-family: "courier new";
 	background: url('/assets/lightpaperfibers.png');
 }
+
+h1, h2, h3, h4, h5 {
+	font-family: "courier new";
+}
 .container {
 	font-size: 1.3em;
-	width: 1000px;
+	width: 1020px;
   	position: absolute;
   	top: 50%;
   	left: 50%;
@@ -24,7 +28,7 @@ body {
 	height: 46px;
 	width: 100%;
 	margin-top: 10px;
-	padding: 11px 15px 0;
+	padding: 8px 15px 0;
 	background-color: rgba(255,255,255,.8);
 
 }
@@ -33,7 +37,7 @@ body {
 	height: 46px;
 	width: 100%;
 	margin-top: 10px;
-	padding: 11px 15px 0;
+	padding: 8px 15px 0;
 	position: relative;
 	top: -57px;
 }

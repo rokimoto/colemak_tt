@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'users#new'
+  root 'sessions#new'
+
   get 'levels' => "levels#index"
   get 'levels/:id' => "levels#show", as: :level
 
@@ -11,6 +12,9 @@ Rails.application.routes.draw do
 
   get 'signup' => "users#new"
   post 'users' => "users#create"
+  get 'users/:id' => "users#show", as: :profile
+
+  post 'user/scores' => "scores#create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -16,11 +16,22 @@
 	</div>
 </div>
 
-<%= form_tag do %>
-<%= text_field_tag :name, params[:name], id: 'textBox', disabled: true %>
-<% end %>
+
 
 
 <%= link_to "Go Back", levels_path %>
 
+
+
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+	<h2 id="modalTitle">Good job!</h2>
+	<p class="lead" id="modalWpm">
+		<%= form_for [current_user, Score.new] do |f| %>
+			<%= f.hidden_field :level_id, :value => @level.id %>
+			<%= f.text_field :wpm, id: 'WpmBox' %>
+			<%= f.submit class: "small button" %>
+		<% end %>
+	</p>
+	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
 

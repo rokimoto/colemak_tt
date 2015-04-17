@@ -1,0 +1,10 @@
+<h1>Profile for <%= current_user.username %></h1>
+
+<h3>Scores</h3>
+<ul>
+<% current_user.scores.each do |score| %>
+<li><strong><%= Level.find(score.level_id).name %></strong>: <%= score.wpm %> WPM</li>
+<% end %>
+</ul>
+
+
