@@ -1,0 +1,12 @@
+<h1>Profile for <%= @user.username %></h1>
+
+<h3>High Scores</h3>
+<ul>
+<% @user.scores.each do |score| %>
+<li><strong><%= Level.find(score.level_id).name %></strong>: <%= score.wpm %> WPM <strong><%= score.date_added %></strong></li>
+<% end %>
+</ul>
+
+<% if current_user == @user %>
+<%= link_to "Edit Profile", edit_user_path(@user), class: "button secondary" %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>Welcome!</h1>
+
+<%= link_to "Link to levels", levels_path %>
+
+
+<h2>Top 10 Scores:</h2>
+<ul>
+<% @top_scores.each do |score| %>
+<li> <%= User.find(score.user_id).username %>: <%= score.wpm %> WPM | <%= Level.find(score.level_id).name %> | <%= score.date_added %></li>
+<% end %>
+</ul> 

@@ -1,0 +1,21 @@
+<div id="newLevelPage">
+<h1>Add a new level</h1>
+
+<%= form_for @level do |f| %>
+	<p>Name: <%= f.text_field :name %></p>
+	<p>Category: </p>
+	<div id="formGroup">
+		<%= f.collection_select(:category_id, Category.all, :id, :name, prompt: true)%>
+
+		<span id="newCatText">Add a new Category: </span><%= f.fields_for :category do |cat_form| %>
+		     <%= cat_form.text_field :name %>
+		<% end %>
+	</div>
+	<p>First line: <%= f.text_field :content %></p>
+	<p>Second line: <%= f.text_field :content2 %></p>
+	<%= f.submit "Add level", class: "button small" %>
+
+<% end %>
+
+<%= link_to "Back to Levels List", levels_list_path %>
+</div>
