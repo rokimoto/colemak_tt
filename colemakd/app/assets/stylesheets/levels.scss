@@ -9,9 +9,10 @@
 
 body {
   font-family: "courier new";
-  background: url('lightpaperfibers.png');
 }
-.container {
+
+
+.gamecontainer {
   font-size: 1em;
   width: 820px;
     position: absolute;
@@ -44,10 +45,4 @@ body {
 
 h1, h2, h3, h4, h5 {
 	font-family: "courier new";
-}
-
-#topbar li {
-  display: inline-block;
-  border-right: 1px solid black;
-  padding-right: 7px;
 }

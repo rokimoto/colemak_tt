@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
+  root 'users#new'
 
   get 'levels' => "levels#index"
   get 'levels/list' => 'levels#list'
   get 'levels/new' => 'levels#new'
   post 'levels' => 'levels#create'
-  get 'levels/item' => 'levels#item'
+  # get 'levels/item' => 'levels#item'
+  get 'levels/:id/item' => 'levels#item', as: :levels_item
   get 'levels/:id' => "levels#show", as: :level
   get 'levels/:id/edit' => 'levels#edit', as: :edit_level
   patch 'levels/:id' => 'levels#update'

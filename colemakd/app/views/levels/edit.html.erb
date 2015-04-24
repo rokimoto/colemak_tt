@@ -1,5 +1,10 @@
 <div class="levels new">
   <h1>Edit a level</h1>
+<% if @level.errors.full_messages.any? %>
+  <% @level.errors.full_messages.each do |error_message| %>
+  <%= error_message if @level.errors.full_messages.first == error_message %> <br />
+  <% end %>
+<% end %>
 
   <%= form_for @level do |f| %>
     <p>Name: <%= f.text_field :name %></p>

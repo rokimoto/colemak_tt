@@ -12,11 +12,10 @@
  *
 
  *= require foundation_and_overrides
+ *= require foundation
+ *= require 'levels'
+ *= require 'users'
+
 
  */
-/*= require foundation */
-/*= require 'levels' */
 
-body {
-	margin: 50px;
-}

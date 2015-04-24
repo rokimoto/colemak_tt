@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    flash[:success] = "Welcome! Your account has been created!"
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
@@ -31,13 +32,17 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    flash[:alert] = "Account has been deleted"
     unless current_user.admin?
       session[:user_id] = nil
     end
     @user = User.find(params[:id])
     @user.destroy
-
-    redirect_to signup_path
+    if current_user.admin?
+      redirect_to pages_loggedin_path
+    else
+      redirect_to signup_path
+    end
   end
 
   private

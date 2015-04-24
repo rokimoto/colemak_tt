@@ -27,6 +27,7 @@ $(".levels.show").ready(function() {
 		var wpmBox = document.getElementById("WpmBox");
 		wpmBox.readOnly = true;
 
+    ex.innerHTML += " ";
 		hid.innerHTML = "|";
 		hid.style.paddingLeft = "0.8em";
 
