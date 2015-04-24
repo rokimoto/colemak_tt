@@ -32,7 +32,7 @@ class ScoresController < ApplicationController
     elsif params[:commit] == 'Back to Levels'
         redirect_to levels_path
     elsif params[:commit] == 'Next Level'
-        redirect_to level_path(@l_id.to_i + 1)
+        redirect_to level_path(Level.find(@l_id).next)
     end
   end
   

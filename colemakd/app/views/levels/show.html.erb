@@ -16,16 +16,52 @@
 		</div>
 	</div>
 
-	<% if @level.content2 %>
-	<div class="box-wrapper">
-		<div class="exercise-box" id="exerciseBox2"><%= @level.content2 %></div>
-		<div class="input-wrapper">
-			<div class="input-box" id="inputBox2">
-			</div>
-			<div class="hidden-box" id="hiddenBox2">
+	<% if @level.content2.to_s != "" %>
+		<div class="box-wrapper">
+			<div class="exercise-box" id="exerciseBox2"><%= @level.content2 %></div>
+			<div class="input-wrapper">
+				<div class="input-box" id="inputBox2">
+				</div>
+				<div class="hidden-box" id="hiddenBox2">
+				</div>
 			</div>
 		</div>
-	</div>
+	<% end %>
+
+	<% if @level.content3.to_s != "" %>
+		<div class="box-wrapper">
+			<div class="exercise-box" id="exerciseBox3"><%= @level.content3 %></div>
+			<div class="input-wrapper">
+				<div class="input-box" id="inputBox3">
+				</div>
+				<div class="hidden-box" id="hiddenBox3">
+				</div>
+			</div>
+		</div>
+	<% end %>
+
+	<% if @level.content4.to_s != ""  %>
+		<div class="box-wrapper">
+			<div class="exercise-box" id="exerciseBox4"><%= @level.content4 %></div>
+			<div class="input-wrapper">
+				<div class="input-box" id="inputBox4">
+				</div>
+				<div class="hidden-box" id="hiddenBox4">
+				</div>
+			</div>
+		</div>
+	<% end %>
+
+	<% if @level.content5.to_s != ""  %>
+		<div class="box-wrapper">
+			<div class="exercise-box" id="exerciseBox5"><%= @level.content5 %></div>
+			<div class="input-wrapper">
+				<div class="input-box" id="inputBox5">
+				</div>
+				<div class="hidden-box" id="hiddenBox5">
+				</div>
+			</div>
+		</div>
 	<% end %>
 
 
@@ -50,7 +86,9 @@
 			<%= f.hidden_field :level_id, :value => @level.id %>
 			<%= f.hidden_field :wpm, id: 'WpmBox' %>
 			<%= f.submit "Try Again?", class: "small button" %>
+			<% if @level.next %>
 			<%= f.submit "Next Level", class: "small button" %>
+			<% end %>
 			<%= f.submit "Back to Levels", class: "small button" %>
 		<% end %>
 	

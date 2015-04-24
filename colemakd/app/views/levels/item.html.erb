@@ -2,8 +2,22 @@
 <ul>
 <li>Category: <%= @category.name %></li>
 <li>Line 1: <%= @level.content %></li>
+<% if @level.content2.to_s != "" %>
 <li>Line 2: <%= @level.content2 %></li>
+<% end %>
+<% if @level.content3.to_s != "" %>
+<li>Line 3: <%= @level.content3 %></li>
+<% end %>
+<% if @level.content4.to_s != "" %>
+<li>Line 4: <%= @level.content4 %></li>
+<% end %>
+<% if @level.content5.to_s != "" %>
+<li>Line 5: <%= @level.content5 %></li>
+<% end %>
 </ul>
 
+<%= link_to "Edit Level", edit_level_path(@level) %>
+
+<%= link_to "Delete level", @level, method: :delete, data: {confirm: "Are you sure you want to delete this level?"} %>
 
 <%= link_to "Back to Levels List", levels_list_path %>

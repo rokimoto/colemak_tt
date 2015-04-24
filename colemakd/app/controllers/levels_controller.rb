@@ -60,10 +60,17 @@ class LevelsController < ApplicationController
     end
   end
 
+  def destroy
+    @level = Level.find(params[:id])
+    @level.destroy
+    redirect_to levels_list_path
+  end
+
+
   private
 
   def level_params
-    params.require(:level).permit(:name, :content, :content2, :category_id, category_attributes: [:name])
+    params.require(:level).permit(:name, :content, :content2, :content3, :content4, :content5, :category_id, category_attributes: [:name])
   end
 
 

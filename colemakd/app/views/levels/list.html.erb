@@ -2,14 +2,15 @@
 
 <%= link_to "Add a level", levels_new_path %>
 <% @categories.each do |category| %>
-	<h3><%= category.name %></h3>
-	<ul>
-		<% category.levels.each do |level| %>
-			<li><%= link_to level.name, levels_item_path(level) %></li>
-			<li>Category: <%= Category.find(level.category_id).name %></li>
-			<li>Line 1: <%= level.content %></li>
-			<li>Line 2:<%= level.content2 %></li>
-
+  <% unless category.levels.empty? %>
+  	<h3><%= category.name %></h3>
+  	<ul>
+  		<% category.levels.each do |level| %>
+  			<li><%= link_to level.name, levels_item_path(level) %></li>
+  			<li>Category: <%= Category.find(level.category_id).name %></li>
+  			<li>Preview: <%= truncate(level.content, :length => 40) %>...</li>
+        <li><%= link_to "Edit Level", edit_level_path(level) %></li>
+      <%end %>
 		<% end %>
 	</ul>
 <% end %>

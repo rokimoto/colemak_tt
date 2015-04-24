@@ -30,6 +30,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    unless current_user.admin?
+      session[:user_id] = nil
+    end
+    @user = User.find(params[:id])
+    @user.destroy
+
+    redirect_to signup_path
+  end
+
   private
 
   def user_params

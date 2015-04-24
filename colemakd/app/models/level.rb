@@ -7,8 +7,16 @@ class Level < ActiveRecord::Base
 
   accepts_nested_attributes_for :category
 
-  def create_category
-    
+  # def next
+  #   Level.where("id > ?", self.id).order("id ASC").first || Level.first
+  # end
+
+  def next
+    Level.where("id > ?", self.id).order("id ASC").first
+  end
+
+  def prev
+    Level.where("id < ?", self.id).order("id DESC").first || Level.last
   end
 
 

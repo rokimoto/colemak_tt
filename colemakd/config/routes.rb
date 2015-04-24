@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   post 'levels' => 'levels#create'
   get 'levels/item' => 'levels#item'
   get 'levels/:id' => "levels#show", as: :level
-  get 'levels/:id/edit' => 'levels#edit', as: :edit
+  get 'levels/:id/edit' => 'levels#edit', as: :edit_level
   patch 'levels/:id' => 'levels#update'
-
+  delete 'levels/:id' => 'levels#destroy'
 
   get 'login' => "sessions#new"
   post 'login' => "sessions#create"
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'users/:id' => "users#show", as: :profile
   get 'users/:id/edit' => "users#edit", as: :edit_user
   patch 'users/:id' => "users#update", as: :user
+  delete 'users/:id' => "users#destroy"
 
   post 'user/scores' => "scores#create"
 

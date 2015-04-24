@@ -1,10 +1,6 @@
-$(document).ready(function() {
+$(".levels.new").ready(function() {
 
 
-	console.log("hi");
-	var newLevelPage = document.getElementById('newLevelPage');
-	console.log(newLevelPage);
-	// if (newLevelPage) {
 		console.log("hi");
 
 		var formGroup = document.getElementById('formGroup');
@@ -43,6 +39,6 @@ $(document).ready(function() {
 			}
 		};
 
-	// }
+
 
 });

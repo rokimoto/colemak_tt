@@ -10,8 +10,8 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body>
-<ul>
+<body class="<%= controller_name %> <%= action_name %>">
+<ul id="topbar">
 <% if current_user %>
 <li><%= link_to "Home", pages_loggedin_path %></li>
 

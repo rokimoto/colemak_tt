@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420015855) do
+ActiveRecord::Schema.define(version: 20150424021949) do
 
   create_table "badges", force: :cascade do |t|
     t.string   "name"
@@ -31,13 +31,15 @@ ActiveRecord::Schema.define(version: 20150420015855) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.text     "content"
-    t.text     "content2"
+    t.string   "content"
+    t.string   "content2"
+    t.string   "content3"
+    t.string   "content4"
+    t.string   "content5"
   end
 
   create_table "scores", force: :cascade do |t|
     t.integer  "wpm"
-    t.datetime "time"
     t.integer  "user_id"
     t.integer  "level_id"
     t.datetime "created_at", null: false

@@ -11,11 +11,17 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require foundation
 //= require jquery.turbolinks
+//= require jquery_ujs
+
+
+//= jquery-readyselector
+//= require foundation
+
 //= require turbolinks
-//= require app2
-//= require newlevelinput
+
+//= require_tree .
+
+
 
 $(function(){ $(document).foundation(); });
