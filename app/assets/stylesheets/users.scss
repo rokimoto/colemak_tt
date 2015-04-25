@@ -2,13 +2,134 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$lato: 'Lato', sans-serif;
+body {
+  font-family: $lato;
+}
+.my-button {
+  color: black;
+  font-family: $lato;
+  font-size: 20px;
+  display: block;
+  border: 3px solid black;
+  width: 170px;
+  padding: 8px 8px 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  background: rgba(255,255,255,.2);
+  text-transform: uppercase;
+}
 
+.my-button:hover {
+  background: rgba(255,255,255,.4);
+  color: black;
+}
+
+.list-letter {
+  color: white;
+  font-size: 50px;
+  font-family: "courier new";
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 6px 30px;
+  display: block;
+  width: 93px;
+}
 .users.new {
   background: url('retina_wood.png');
-
+  .text-block {
+    text-align: center;
+  }
+  .brand-title {
+    padding-top: 90px;
+    color: white;
+    font-size: 6em;
+    text-align: center;
+    text-shadow: #000 2px 2px 15px;
+  }
   .index-image {
-    margin-top: -30px;
+    position: relative;
+    top: -360px;
+    z-index: -2;
+
+  }
+
+  .main-image-button {
+    position: relative;
+    left: 800px;
+    top: 0px;
+  }
+
+  .sign-in {
+    color: black;
+    font-family: $lato;
+    position: relative;
+    top: 10px;
+    left: 370px;
+    font-size: 1.1em;
+  }
+
+  .sign-in:hover {
+    text-decoration: underline;
+    color: black;
+  }
+
+  .intro-box {
     width: 100%;
+    height: 360px;
+    background-color: #191919;
+    position: relative;
+    top: -380px;
+    padding-top: 45px;
+    color: white;
+    font-weight: 400;
+
+    h1 {
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .list-letter {
+      float: left;
+      margin-right: 40px;
+    }
+
+    p {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .sub-text {
+      padding-top: 50px;
+      line-height: 2;
+      letter-spacing: .5px;
+    }
+
+  }
+
+  .about-colemak-box {
+    @extend .intro-box;
+    color: black;
+    background-color: white;
+    text-align: right;
+
+    h1 {
+      color: black;
+    }
+
+    .list-letter {
+      float: right;
+      color: black;
+      border: 3px solid black;
+      margin-left: 40px;
+      margin-right: 0;
+    }
+
+    ul {
+      text-align: left;
+    }
+
+
   }
 
 }
