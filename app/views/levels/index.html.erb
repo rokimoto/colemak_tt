@@ -1,12 +1,26 @@
-<h1>List of Levels</h1>
+<div class="levels-wrapper">
+  <div class="levels-header">
+    <div class="row">
+      <div class="large-8 large-offset-2 medium-10 medium-offset-1 columns">
+        <h3>Choose a level below to get started...</h3>
+      </div>
+    </div>
+  </div>
 
-<% @categories.each do |category| %>
-  <% unless category.levels.empty? %>
-  	<h3><%= category.name %></h3>
-  	<ul>
-  		<% category.levels.each do |level| %>
-  			<li><%= link_to level.name, level_path(level) %></li>
-  		<% end %>
-  	</ul>
+  <% @categories.each do |category| %>
+    <% unless category.levels.empty? %>
+      <ul class="accordion panel-square" data-accordion>
+        <li class="accordion-navigation">
+          <a class="panel-square-header" href="#cat<%=category.id%>"><h3><%= category.name %></h3></a>
+           <div id="cat<%=category.id%>" class="content panel-square-body">
+          <% category.levels.each do |level| %>
+          <div class="level-button"><%= link_to level.name, level_path(level) %></div>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+
+    <% end %>
   <% end %>
-<% end %>
+
+  </div>

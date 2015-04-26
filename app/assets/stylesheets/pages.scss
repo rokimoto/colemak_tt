@@ -1,3 +1,288 @@
-// Place all the styles related to the pages controller here.
+// Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$lato: 'Lato', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $lato;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "courier new";
+}
+
+.wrapper {
+    min-height: 550px;
+}
+
+.my-button {
+  color: black;
+  font-family: $lato;
+  font-size: 20px;
+  display: block;
+  border: 3px solid black;
+  width: 170px;
+  padding: 8px 8px 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  background: rgba(255,255,255,.2);
+  text-transform: uppercase;
+}
+
+.my-button:hover {
+  background: rgba(255,255,255,.4);
+  color: black;
+}
+
+.list-letter {
+  color: white;
+  font-size: 50px;
+  font-family: "courier new";
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 6px 30px;
+  display: block;
+  width: 93px;
+}
+
+
+.footer {
+  text-align: center;
+  color: white;
+  background-color: #333333;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.pages.index {
+  background: url('retina_wood.png');
+  
+  .text-block {
+    text-align: center;
+  }
+  .brand-title {
+    padding-top: 8%;
+    color: white;
+    font-size: 6em;
+    text-align: center;
+    text-shadow: #000 2px 2px 15px;
+  }
+  .index-image {
+    position: relative;
+    top: -300px;
+    z-index: -2;
+
+  }
+
+  .main-image-button {
+    position: absolute;
+    left: 76%;
+    top: 260px;
+  }
+
+  .sign-in {
+    font-family: $lato;
+    position: absolute;
+    top: 320px;
+    left: 82%;
+    font-size: 1.1em;
+  }
+  .sign-in a {
+    color: black;
+  }
+
+  .sign-in a:hover {
+    text-decoration: underline;
+    color: black;
+  }
+
+  .intro-box {
+    width: 100%;
+    background-color: #191919;
+    position: relative;
+    top: -380px;
+    padding-top: 45px;
+    color: white;
+    font-weight: 400;
+    padding-bottom: 70px;
+
+    h1 {
+      color: white;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+
+    .list-letter {
+      float: left;
+      margin-right: 40px;
+    }
+
+    p {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .sub-text {
+      padding-top: 50px;
+      line-height: 2;
+      letter-spacing: .5px;
+    }
+
+  }
+
+  .about-colemak-box {
+    @extend .intro-box;
+    color: black;
+    text-align: right;
+    background: #eeedf2 url('keyboard2.jpg');
+    background-position: -50% 0%;
+    background-size: 75%;
+    background-repeat: no-repeat;
+
+    h1 {
+      color: black;
+    }
+
+    .list-letter {
+      float: right;
+      color: black;
+      border: 3px solid black;
+      margin-left: 50px;
+      margin-right: 0;
+    }
+
+    ul {
+      text-align: left;
+      font-size: 1.5em;
+      list-style: none;
+    }
+
+    .keyboard {
+      z-index: -2;
+      width: 100%;
+    }
+
+  }
+
+  .benefit-colemak-box {
+    @extend .intro-box;
+    text-align: center;
+    color: black;
+    background: transparent;
+
+    .list-letter {
+      color: black;
+      border: 3px solid black;
+      float: none;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+
+    h1 {
+      color: black;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .icon {
+      font-size: 3em;
+    }
+
+    .small-header {
+      font-size: 1.2em;
+      margin-top: -10px;
+      font-weight: bold;
+    }
+
+    .small-text {
+      font-size: .9em;
+      margin-top: 10px;
+    }
+
+    .contain-row {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+  }
+
+  .newsletter-box {
+    @extend .intro-box;
+
+    background: transparent;
+    text-align: center;
+
+    margin-bottom: -390px;
+
+
+    .newsbox {
+      background: #fff;
+      padding-top: 20px;
+      padding-bottom: 30px;
+      border-radius: 5px;
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+
+    input, .postfix {
+      margin-top: 5px;
+    }
+
+    .news-border {
+      border: 1px solid grey;
+    }
+  }
+
+}
+
+
+
+@media only screen and (max-width: 64em) { 
+  .pages.index {
+
+    .sign-in, .main-image-button {
+      display: none;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 40em) { 
+  .pages.index {
+    .brand-title {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      color: white;
+      font-size: 4em;
+      text-align: center;
+      text-shadow: #000 4px 4px 10px;
+    }
+
+    .image-wrapper:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0, 0.3);
+      -moz-transition: background .3s linear;
+      -webkit-transition: background .3s linear;
+      -o-transition: background .3s linear;
+      transition: background .3s linear;
+      z-index: -1;
+    }
+
+  }
+}
+
+
+
+
+

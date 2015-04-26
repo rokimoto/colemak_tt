@@ -2,47 +2,154 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$lato: 'Lato', sans-serif;
 
-* {
-  box-sizing: border-box;
+.accordion-navigation a {
+  background: #4c4c4c !important;
+  padding-bottom: 10px !important;
 }
 
-body {
-  font-family: "courier new";
+
+.panel-square {
+  background-color: white;
+  width: 300px;
+  margin: 20px;
+  border-radius: 5px 5px 3px 3px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.07);
+  display: inline-block;
+  vertical-align: top;
+
+  .panel-square-header {
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+
+    h3 {
+      color: white;
+      font-size: 1.5em;
+    }
+
+  }
+  .panel-square-body {
+    padding: 10px;
+    border-radius: 0 0 3px 3px;
+
+    a {
+      background: white !important;
+      padding-bottom: 0 !important;
+    }
+
+    a:hover {
+      background-color: #f7f9f9 !important;
+    }
+
+  }
+
+
+  .level-button {
+    border: 2px solid #008CBA;
+    text-align: center;
+    padding: 5px;
+    margin: 5px 30px;
+  }
+
+  .level-button:hover {
+    background-color: #f7f9f9;
+  }
+  
+
+
+
 }
 
 
-.gamecontainer {
-  font-size: 1em;
-  width: 820px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: 0 0 0 -410px;
-    transform: translateY(-50%);
-}
+.levels.index {
+    background: url('retina_wood.png');
 
-.exercise-box, .input-box {
-  border: 1px solid black;
-  height: 35px;
-  width: 100%;
-  padding: 5px 15px 0;
-  background-color: rgba(255,255,255,.8);
+    .levels-wrapper {
+      text-align: center;
+    }
+
+    .levels-header {
+      background-color: white;
+      padding-top: 20px;
+      padding-bottom: 15px;
+      text-align: left;
+      margin-bottom: 40px;
+    }
 
 }
 
-.hidden-box {
-  height: 35px;
-  width: 100%;
-  padding: 5px 15px 0;
-  position: relative;
-  top: -35px;
+
+
+.levels.show {
+
+
+    font-family: "courier new";
+
+
+  .gamecontainer {
+    font-size: 1em;
+    width: 820px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0 0 0 -410px;
+      transform: translateY(-50%);
+  }
+
+  .exercise-box, .input-box {
+    border: 1px solid black;
+    height: 35px;
+    width: 100%;
+    padding: 5px 15px 0;
+    background-color: rgba(255,255,255,.8);
+
+  }
+
+  .hidden-box {
+    height: 35px;
+    width: 100%;
+    padding: 5px 15px 0;
+    position: relative;
+    top: -35px;
+  }
+
+  .block {
+    background-color: black;
+  }
 }
 
-.block {
-  background-color: black;
+.levels.list {
+  h3 {
+    font-family: $lato;
+  }
+
+  .header {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid grey;
+    margin-bottom: 15px;
+  }
 }
 
-h1, h2, h3, h4, h5 {
-	font-family: "courier new";
+.levels.item {
+  td {
+    font-size: 1.2em;
+  }
+
+  .panel {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-family: $lato;
+  }
+
+  table {
+    margin-bottom: 30px;
+    width: 100%;
+  }
 }
+
+

@@ -21,6 +21,7 @@ gem 'pry'
 gem 'pry-rails'
 
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

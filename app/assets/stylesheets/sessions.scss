@@ -1,3 +1,57 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$lato: 'Lato', sans-serif;
+
+.sessions.new {
+    background: url('retina_wood.png');
+    .signin-header {
+      padding-top: 10px;
+    }
+
+    .signup-header {
+      margin-top: 50px;
+      background-color: #f7f7f7;
+      padding-top: 20px;
+      padding-bottom: 5px;
+      border-radius: 7px 7px 0 0;
+    }
+    .signup-panel {
+      background-color: white;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      border-radius: 0 0 7px 7px;
+
+      h3 {
+        font-family: $lato;
+        margin-top: -10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .fi-social-facebook {
+      font-size: 2em;
+      margin-right: 10px;
+      margin-left: 5px;
+    }
+
+    .my-button {
+      width: 320px;
+        padding: 0px 8px 0px;
+        span {
+          position: relative;
+          top: -8px;
+          font-weight: 400;
+        }
+    }
+
+    .my-button:hover {
+      background-color: #E9EAED;
+    }
+}
+
+@media only screen and (max-width: 64em) { 
+  .sessions.new {
+
+     .signup-header {
+      margin-top: 0;
+    }
+  }
+}

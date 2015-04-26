@@ -237,7 +237,7 @@ $(".levels.show").ready(function() {
 			}
 			if (roundCounter === 0) {
 
-				if (counter == ex.innerHTML.length-2 && !ex2) {
+				if (counter == ex.innerHTML.length-1 && !ex2) {
 
 						if (ex.innerHTML[counter] == letter) {
 							inn.innerHTML += letter;
@@ -278,7 +278,7 @@ $(".levels.show").ready(function() {
 				}
 			}
 			else if (roundCounter === 1) {
-				if (counter == ex2.innerHTML.length-2 && !ex3) {
+				if (counter == ex2.innerHTML.length-1 && !ex3) {
 
 						if (ex2.innerHTML[counter] == letter) {
 							inn2.innerHTML += letter;
@@ -314,7 +314,7 @@ $(".levels.show").ready(function() {
 				}
 			}
 			else if (roundCounter === 2) {
-				if (counter == ex3.innerHTML.length-2 && !ex4) {
+				if (counter == ex3.innerHTML.length-1 && !ex4) {
 
 						if (ex3.innerHTML[counter] == letter) {
 							inn3.innerHTML += letter;
@@ -351,7 +351,7 @@ $(".levels.show").ready(function() {
 				}
 			}
 			else if (roundCounter === 3) {
-				if (counter == ex4.innerHTML.length-2 && !ex5) {
+				if (counter == ex4.innerHTML.length-1 && !ex5) {
 					// if (!ex5) {
 						if (ex4.innerHTML[counter] == letter) {
 							inn4.innerHTML += letter;
@@ -389,7 +389,7 @@ $(".levels.show").ready(function() {
 			}
 
 			else if (roundCounter === 4) {
-				if (counter == ex5.innerHTML.length-2 && !ex6) {
+				if (counter == ex5.innerHTML.length-1 && !ex6) {
 					// if (!ex6) {
 						if (ex5.innerHTML[counter] == letter) {
 							inn5.innerHTML += letter;
@@ -483,8 +483,6 @@ $(".levels.show").ready(function() {
 					}
 				}
 			}
-			// one extra error will be added for the last character of the last line
-			errors -= 1;
 			var grossWpm = calculateGrossWpm()
 			var netWpm = calculateNetWpm(errors);
 			console.log(seconds);

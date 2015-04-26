@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#new'
+  root 'pages#index'
 
   get 'levels' => "levels#index"
   get 'levels/list' => 'levels#list'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   delete 'sessions' => "sessions#destroy"
 
   get 'pages/loggedin' => "pages#loggedin"
+  get 'pages' => "pages#index"
 
   get 'signup' => "users#new"
   post 'users' => "users#create"

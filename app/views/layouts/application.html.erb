@@ -46,6 +46,7 @@
         <li><%= link_to "Levels", levels_path %></li>
         <% if current_user.admin? %>
           <li><%= link_to "Admin Levels List", levels_list_path %></li>
+          <li><%= link_to "Add New Level", levels_new_path %></li>
         <% end %>
     <% end %>
     </ul>
@@ -60,9 +61,22 @@
     </div>
   <% end %>
 
-  <%= yield %>
-  <br>
-  <%= params %>
+
+  <div class="wrapper">
+    <%= yield %>
+    <br>
+    <%= params %>
+  </div>
+
+<div class="footer">
+  <div class="row">
+    <div class="small-12 columns">
+    &copy; Colemak'd. All rights reserved. 
+    </div>
+  </div>
+</div>
+
+  
  </body>
 </html>
 
