@@ -11,4 +11,8 @@ class Score < ActiveRecord::Base
     created_at.localtime.strftime("%-m/%-d/%Y @ %l:%M %p")
   end
 
+  def short_date_added
+    created_at.localtime.strftime("%-m/%-d/%Y")
+  end
+
 end

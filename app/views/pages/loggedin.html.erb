@@ -1,11 +1,59 @@
-<h1>Welcome!</h1>
+<div class="header">
+  <div class="row">
+    <div class="large-12 columns">
+      <h2>Welcome!</h2>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Link to levels", levels_path %>
+
+<div class="row">
 
 
-<h2>Top 10 Scores:</h2>
-<ul>
-<% @top_scores.each do |score| %>
-<li> <%= User.find(score.user_id).username %>: <%= score.wpm %> WPM | <%= Level.find(score.level_id).name %> | <%= score.date_added %></li>
-<% end %>
-</ul> 
+  <div class="large-8 columns">
+    <div class="scores">
+    <h3>Top 10 Scores:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th width="150">Player</th>
+          <th width="100">Score</th>
+          <th>Level</th>
+          <th width="100">Date</th>
+        </tr>
+      </thead>
+      <tbody><% @top_scores.each do |score| %>
+        <tr>
+          <td><%= User.find(score.user_id).username %></td>
+          <td><%= score.wpm %> WPM</td>
+          <td><%= link_to Level.find(score.level_id).name, level_path(Level.find(score.level_id)) %></td>
+          <td><%= score.short_date_added %></td>
+        </tr>
+        <%end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="large-4 columns">
+
+      <%= link_to levels_path do %>
+          <div class="visit-level">
+            <p>Levels</p>
+            <p><i class="fi-fast-forward"></i></p> 
+          </div>
+      <% end %>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
