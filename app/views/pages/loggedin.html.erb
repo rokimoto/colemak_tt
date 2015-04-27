@@ -24,7 +24,7 @@
       </thead>
       <tbody><% @top_scores.each do |score| %>
         <tr>
-          <td><%= User.find(score.user_id).username %></td>
+          <td><%= User.find(score.user_id).username || User.find(score.user_id).name %></td>
           <td><%= score.wpm %> WPM</td>
           <td><%= link_to Level.find(score.level_id).name, level_path(Level.find(score.level_id)) %></td>
           <td><%= score.short_date_added %></td>
