@@ -21,7 +21,7 @@ $(".levels.new").ready(function() {
 		var selectBoxCounter = 0;
 
 		newCatText.style.display = "none";
-		selectBoxName.style.display = "none";
+		formGroup.removeChild(selectBoxName);
 
 		selectBox.onchange=function(){
 			if (this.value != "new") {
@@ -35,7 +35,7 @@ $(".levels.new").ready(function() {
 			}
 			else {
 				newCatText.style.display = "block";
-				selectBoxName.style.display = "block";
+				formGroup.appendChild(newNameInput);
 			}
 		};
 

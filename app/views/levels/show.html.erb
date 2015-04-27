@@ -1,79 +1,80 @@
-<h1><%= @level.name %></h1>
-
-
-
-
-
-<div class="gamecontainer">
-
-	<div class="box-wrapper">
-		<div class="exercise-box" id="exerciseBox"><%= @level.content %></div>
-		<div class="input-wrapper">
-			<div class="input-box" id="inputBox">
-			</div>
-			<div class="hidden-box" id="hiddenBox">
-			</div>
+<div class="top-header">
+	<div class="row">
+		<div class="large-8 columns">
+			<h2><%= @level.name %></h2>
+		</div>
+		<div class="large-4 columns return">
+			<%= link_to levels_path do %>
+				<i class="fi-arrow-left"></i>  Return to Levels
+			<% end %>
 		</div>
 	</div>
-
-	<% if @level.content2.to_s != "" %>
-		<div class="box-wrapper">
-			<div class="exercise-box" id="exerciseBox2"><%= @level.content2 %></div>
-			<div class="input-wrapper">
-				<div class="input-box" id="inputBox2">
-				</div>
-				<div class="hidden-box" id="hiddenBox2">
-				</div>
-			</div>
-		</div>
-	<% end %>
-
-	<% if @level.content3.to_s != "" %>
-		<div class="box-wrapper">
-			<div class="exercise-box" id="exerciseBox3"><%= @level.content3 %></div>
-			<div class="input-wrapper">
-				<div class="input-box" id="inputBox3">
-				</div>
-				<div class="hidden-box" id="hiddenBox3">
-				</div>
-			</div>
-		</div>
-	<% end %>
-
-	<% if @level.content4.to_s != ""  %>
-		<div class="box-wrapper">
-			<div class="exercise-box" id="exerciseBox4"><%= @level.content4 %></div>
-			<div class="input-wrapper">
-				<div class="input-box" id="inputBox4">
-				</div>
-				<div class="hidden-box" id="hiddenBox4">
-				</div>
-			</div>
-		</div>
-	<% end %>
-
-	<% if @level.content5.to_s != ""  %>
-		<div class="box-wrapper">
-			<div class="exercise-box" id="exerciseBox5"><%= @level.content5 %></div>
-			<div class="input-wrapper">
-				<div class="input-box" id="inputBox5">
-				</div>
-				<div class="hidden-box" id="hiddenBox5">
-				</div>
-			</div>
-		</div>
-	<% end %>
-
-
-
 </div>
 
 
+<div class="game-wrapper">
 
+	<div class="gamecontainer">
 
-<%= link_to "Go Back", levels_path %>
+		<div class="box-wrapper">
+			<div class="exercise-box" id="exerciseBox"><%= @level.content %></div>
+			<div class="input-wrapper">
+				<div class="input-box" id="inputBox">
+				</div>
+				<div class="hidden-box" id="hiddenBox">
+				</div>
+			</div>
+		</div>
 
+		<% if @level.content2.to_s != "" %>
+			<div class="box-wrapper">
+				<div class="exercise-box" id="exerciseBox2"><%= @level.content2 %></div>
+				<div class="input-wrapper">
+					<div class="input-box" id="inputBox2">
+					</div>
+					<div class="hidden-box" id="hiddenBox2">
+					</div>
+				</div>
+			</div>
+		<% end %>
 
+		<% if @level.content3.to_s != "" %>
+			<div class="box-wrapper">
+				<div class="exercise-box" id="exerciseBox3"><%= @level.content3 %></div>
+				<div class="input-wrapper">
+					<div class="input-box" id="inputBox3">
+					</div>
+					<div class="hidden-box" id="hiddenBox3">
+					</div>
+				</div>
+			</div>
+		<% end %>
+
+		<% if @level.content4.to_s != ""  %>
+			<div class="box-wrapper">
+				<div class="exercise-box" id="exerciseBox4"><%= @level.content4 %></div>
+				<div class="input-wrapper">
+					<div class="input-box" id="inputBox4">
+					</div>
+					<div class="hidden-box" id="hiddenBox4">
+					</div>
+				</div>
+			</div>
+		<% end %>
+
+		<% if @level.content5.to_s != ""  %>
+			<div class="box-wrapper">
+				<div class="exercise-box" id="exerciseBox5"><%= @level.content5 %></div>
+				<div class="input-wrapper">
+					<div class="input-box" id="inputBox5">
+					</div>
+					<div class="hidden-box" id="hiddenBox5">
+					</div>
+				</div>
+			</div>
+		<% end %>
+
+	</div>
 
 <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 

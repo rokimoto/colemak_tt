@@ -47,6 +47,104 @@ $lato: 'Lato', sans-serif;
     }
 }
 
+.users.show {
+  background: url('retina_wood.png');
+
+  .top-header {
+    background: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+
+  .scores {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .user-header {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 10px solid #333333;
+    margin-bottom: 30px;
+  }
+
+  .panel-square-header {
+    padding-top: 4px;
+    padding-bottom: 1px;
+  }
+
+  a:hover .panel-square-header {
+    background: #606060;
+  }
+
+  .panel-square {
+    text-align: center;
+  }
+
+  .panel-square-body {
+    padding-top: 20px;
+  }
+
+  a:hover .panel-square-body {
+    background: #ededed;
+  }
+
+  .wpm-highlight {
+
+    p:nth-child(1) {
+      margin-bottom: 10px;
+    }
+
+    p:nth-child(2) {
+      color: #333333;
+    }
+
+    p:nth-child(3) {
+      font-size: 1.4em;
+      margin-bottom: 24px;
+    }
+
+    .fi-crown {
+      font-size: 3em;
+      color: #333333;
+    }
+  
+    p {
+      line-height: .6;
+    }
+
+  }
+
+  .date {
+    font-size: .85em;
+    color: #8D9AA5;
+    margin-bottom: 10px;
+  }
+
+  .user-scores-wrapper {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+
+}
+
+.users.edit {
+  .header {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid grey;
+    margin-bottom: 15px;
+  }
+
+  
+}
+
+
+
 @media only screen and (max-width: 64em) { 
   .users.new {
 

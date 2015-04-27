@@ -27,27 +27,35 @@ $(".levels.show").ready(function() {
 		var wpmBox = document.getElementById("WpmBox");
 		wpmBox.readOnly = true;
 
-    ex.innerHTML += " ";
+    
 		hid.innerHTML = "|";
 		hid.style.paddingLeft = "0.8em";
-
 		inn.innerHTML = "";
+
 		if (inn2) {
+      ex.innerHTML += " ";
 			inn2.innerHTML = "";
 			hid2.style.paddingLeft = "0.8em";
 		}
 		if (inn3) {
+      ex2.innerHTML += " ";
 			inn3.innerHTML = "";
 			hid3.style.paddingLeft = "0.8em";
 		}
 		if (inn4) {
+      ex3.innerHTML += " ";
 			inn4.innerHTML = "";
 			hid4.style.paddingLeft = "0.8em";
 		}
 		if (inn5) {
+      ex4.innerHTML += " ";
 			inn5.innerHTML = "";
 			hid5.style.paddingLeft = "0.8em";
 		}	
+
+    if (ex6) {
+      ex5.innerHTML += " ";
+    }
 
 
 		var counter = 0;
@@ -248,13 +256,11 @@ $(".levels.show").ready(function() {
 
 						hid.innerHTML = "";
 						clearTimeout(clockRun);
-						console.log("calc1");
 						calculateErrors();
 
 				}
 
 				else if (counter == ex.innerHTML.length-1) {
-
 					if (letter == " ") {
 						inn.innerHTML += "<span class='block'>`</span>";
 					}
@@ -453,6 +459,7 @@ $(".levels.show").ready(function() {
 
 		// calculates how many errors
 		function calculateErrors() {
+      console.log("calculate");
 			var errors = 0;
 			var realChars = $(ex).text();
 			var inputChars = $(inn).text();
@@ -470,11 +477,10 @@ $(".levels.show").ready(function() {
 			}	
 			if (ex5) {
 				realChars += $(ex5).text();
-				inputChars += $(inn6).text();
+				inputChars += $(inn5).text();
 			}											
 			for (var i = 0; i < realChars.length; i++) {
 				if (realChars[i] != inputChars[i]) {
-					console.log(realChars[i] + " vs " + inputChars[i])
 					if (realChars.charCodeAt(i) == 32 && inputChars.charCodeAt(i) == 160) {
 						console.log("fixed!");
 					}
@@ -483,10 +489,8 @@ $(".levels.show").ready(function() {
 					}
 				}
 			}
-			var grossWpm = calculateGrossWpm()
+			var grossWpm = calculateGrossWpm();
 			var netWpm = calculateNetWpm(errors);
-			console.log(seconds);
-			console.log(totalChars);
 			wpmBox.value = netWpm;
 			modalWpm.innerHTML = grossWpm + " WPM with " + errors + " errors adjusted to " + netWpm + " WPM";
 			$('#myModal').foundation('reveal', 'open');

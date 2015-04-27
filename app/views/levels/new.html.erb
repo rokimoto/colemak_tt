@@ -1,27 +1,36 @@
+<div class="row">
+  <div class="large-12 columns header">
+    <h1>Add a new level</h1>
+  </div>
+</div>
+<div class="row">
+	<div class="large-10 large-offset-1 columns">
+		<% if @level.errors.full_messages.any? %>
+			<% @level.errors.full_messages.each do |error_message| %>
+				<%= error_message if @level.errors.full_messages.first == error_message %> <br />
+			<% end %>
 
-<h1>Add a new level</h1>
-<% if @level.errors.full_messages.any? %>
-	<% @level.errors.full_messages.each do |error_message| %>
-	<%= error_message if @level.errors.full_messages.first == error_message %> <br />
-<% end %>
-<% end %>
-<%= form_for @level do |f| %>
-	<p>Name: <%= f.text_field :name %></p>
-	<p>Category: </p>
-	<div id="formGroup">
-		<%= f.collection_select(:category_id, Category.all, :id, :name, prompt: true)%>
-
-		<span id="newCatText">Add a new Category: </span><%= f.fields_for :category do |cat_form| %>
-		     <%= cat_form.text_field :name %>
 		<% end %>
+
+		<%= form_for @level do |f| %>
+			<p>Name: <%= f.text_field :name %></p>
+			<p>Category: </p>
+			<div id="formGroup">
+				<%= f.collection_select(:category_id, Category.all, :id, :name, prompt: true)%>
+
+				<span id="newCatText">Add a new Category: </span><%= f.fields_for :category do |cat_form| %>
+				     <%= cat_form.text_field :name %>
+				<% end %>
+			</div>
+			<p>First line: <%= f.text_field :content %></p>
+			<p>Second line: <%= f.text_field :content2 %></p>
+			<p>Third line: <%= f.text_field :content3 %></p>
+			<p>Fourth line: <%= f.text_field :content4 %></p>
+			<p>Fifth line: <%= f.text_field :content5 %></p>
+			<%= f.submit "Add level", class: "button small" %>
+
+		<% end %>
+
+		<%= link_to "Back to Levels List", levels_list_path %>
 	</div>
-	<p>First line: <%= f.text_field :content %></p>
-	<p>Second line: <%= f.text_field :content2 %></p>
-	<p>Third line: <%= f.text_field :content3 %></p>
-	<p>Fourth line: <%= f.text_field :content4 %></p>
-	<p>Fifth line: <%= f.text_field :content5 %></p>
-	<%= f.submit "Add level", class: "button small" %>
-
-<% end %>
-
-<%= link_to "Back to Levels List", levels_list_path %>
+</div>

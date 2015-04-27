@@ -4,12 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    flash[:success] = "Welcome! Your account has been created!"
+    flash[:success] = "Welcome to Colemak'd!"
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
       redirect_to pages_loggedin_path
     else
+      flash[:alert] = @user.errors.full_messages.to_sentence
       render "new"
     end
   end
@@ -25,8 +26,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to @user
+      flash[:success] = "Your profile has been updated!"
+      redirect_to edit_user_path(@user)
     else
+      flash[:alert] = @user.errors.full_messages.to_sentence
       render "edit"
     end
   end

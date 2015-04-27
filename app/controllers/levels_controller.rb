@@ -26,19 +26,17 @@ class LevelsController < ApplicationController
   end
 
 
-    def create
+  def create
     @level = Level.new(level_params)
     @categories = Category.all
     if @level.save
-      # if @level.category.name.empty? == false
-      #   @level.category.save
-      # end
       flash[:success] = "Your level has been created!"
       redirect_to levels_item_path(@level)
     else
+      flash[:alert] = @level.errors.full_messages.to_sentence
       render "new"
     end
-    end
+  end
 
   def edit
     @level = Level.find(params[:id])
@@ -49,7 +47,6 @@ class LevelsController < ApplicationController
   end
 
   def item
-    # @level = Level.find(params[:format])
     @level = Level.find(params[:id])
     @category = Category.find(@level.category_id)
   end
@@ -60,6 +57,7 @@ class LevelsController < ApplicationController
       flash[:success] = "Your level has been updated!"
       redirect_to levels_item_path(@level)
     else
+      flash[:alert] = @level.errors.full_messages.to_sentence
       render "edit"
     end
   end

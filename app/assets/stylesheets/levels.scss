@@ -9,6 +9,15 @@ $lato: 'Lato', sans-serif;
   padding-bottom: 10px !important;
 }
 
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  
+  border-top: 5px solid #fff;
+}
+
 
 .panel-square {
   background-color: white;
@@ -22,6 +31,7 @@ $lato: 'Lato', sans-serif;
   .panel-square-header {
     text-align: center;
     border-radius: 5px 5px 0 0;
+    background: #4c4c4c;
 
     h3 {
       color: white;
@@ -30,7 +40,7 @@ $lato: 'Lato', sans-serif;
 
   }
   .panel-square-body {
-    padding: 10px;
+    padding: 10px 10px 8px;
     border-radius: 0 0 3px 3px;
 
     a {
@@ -43,21 +53,6 @@ $lato: 'Lato', sans-serif;
     }
 
   }
-
-
-  .level-button {
-    border: 2px solid #008CBA;
-    text-align: center;
-    padding: 5px;
-    margin: 5px 30px;
-  }
-
-  .level-button:hover {
-    background-color: #f7f9f9;
-  }
-  
-
-
 
 }
 
@@ -77,24 +72,72 @@ $lato: 'Lato', sans-serif;
       margin-bottom: 40px;
     }
 
+    .panel-square {
+      border-radius: 3px 3px 3px 3px;
+    }
+
+    .panel-square-header {
+      border-radius: 3px 3px 0 0;
+      position: relative;
+    }
+
+    .panel-square-header:hover, .panel-square-header:focus {
+      background: #606060 !important;
+    }
+
+    .level-button:hover {
+    background: #ededed !important;
+    }
+
+    .panel-square-body {
+      padding: 0;
+    }
+
+    .level-button {
+      border-top: 2px solid #cecece;
+      text-align: center;
+      padding: 10px;
+    }
+
+    h3, .arrow-down {
+      display: inline-block;
+    }
+
+    .arrow-down {
+      position: absolute;
+      right: 20px;
+      top: 32px;
+    }
+  
+
 }
 
 
 
 .levels.show {
+  font-family: "courier new";
 
+  background: url('retina_wood.png');
 
-    font-family: "courier new";
+  .top-header {
+    background: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
+  .game-wrapper {
+    position: relative;
+    min-height: 480px;
+  }
 
   .gamecontainer {
     font-size: 1em;
     width: 820px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin: 0 0 0 -410px;
-      transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 -410px;
+    transform: translateY(-50%);
   }
 
   .exercise-box, .input-box {
@@ -102,8 +145,27 @@ $lato: 'Lato', sans-serif;
     height: 35px;
     width: 100%;
     padding: 5px 15px 0;
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255,255,255,1);
+  }
 
+  .input-box {
+    margin-top: -1px;
+  }
+
+  .box-wrapper:nth-child(2) {
+    margin-top: -25px;
+  }
+
+    .box-wrapper:nth-child(3) {
+    margin-top: -25px;
+  }
+
+    .box-wrapper:nth-child(4) {
+    margin-top: -25px;
+  }
+
+    .box-wrapper:nth-child(5) {
+    margin-top: -25px;
   }
 
   .hidden-box {
@@ -116,6 +178,17 @@ $lato: 'Lato', sans-serif;
 
   .block {
     background-color: black;
+  }
+
+  .return {
+    font-family: $lato;
+    font-size: 1em;
+    padding-top: 15px;
+    text-align: center;
+
+    .fi-arrow-left {
+      margin-right: 5px;
+    }
   }
 }
 
@@ -134,7 +207,7 @@ $lato: 'Lato', sans-serif;
 
 .levels.item {
   td {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   .panel {
@@ -152,4 +225,15 @@ $lato: 'Lato', sans-serif;
   }
 }
 
+.levels.new {
+  .header {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid grey;
+    margin-bottom: 15px;
+  }
+}
 
+.levels.edit {
+  @extend .levels.new;
+}

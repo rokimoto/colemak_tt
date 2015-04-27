@@ -11,10 +11,17 @@
     <% unless category.levels.empty? %>
       <ul class="accordion panel-square" data-accordion>
         <li class="accordion-navigation">
-          <a class="panel-square-header" href="#cat<%=category.id%>"><h3><%= category.name %></h3></a>
+          <a class="panel-square-header" href="#cat<%=category.id%>"><h3><%= category.name %></h3><div class="arrow-down"></div></a>
            <div id="cat<%=category.id%>" class="content panel-square-body">
           <% category.levels.each do |level| %>
-          <div class="level-button"><%= link_to level.name, level_path(level) %></div>
+
+
+            <%= link_to level_path(level) do %>
+              <div class="level-button">
+              <%= level.name %>
+              </div>
+            <% end %>
+
           <% end %>
         </div>
       </li>
@@ -23,4 +30,5 @@
     <% end %>
   <% end %>
 
-  </div>
+
+</div>

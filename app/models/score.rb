@@ -8,7 +8,7 @@ class Score < ActiveRecord::Base
 
 
   def date_added
-    created_at.localtime.strftime("%-m/%-d/%Y | %l:%M %p")
+    created_at.localtime.strftime("%-m/%-d/%Y @ %l:%M %p")
   end
 
 end
