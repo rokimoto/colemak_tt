@@ -12,8 +12,7 @@
     <div class="large-5 large-offset-1 medium-8 medium-offset-2 columns">
       <h3>Sign up with email:</h3>
       <%= form_for @user do |f| %>
-        <%= f.label :first_name %> <%= f.text_field :first_name %>
-        <%= f.label :last_name %> <%= f.text_field :last_name %>
+        <%= f.label :name %> <%= f.text_field :name %>
         <%= f.label :email %> <%= f.email_field :email %>
         <%= f.label :username %> <%= f.text_field :username %>
         <%= f.label :password %> <%= f.password_field :password %>
@@ -23,9 +22,11 @@
   </div>
   <div class="large-5 medium-10 columns">
         <h3>Or: </h3>
-        <div class="my-button">
-        <i class="fi-social-facebook"></i><span>Sign up with Facebook</span>
-        </div>
+        <%= link_to "/auth/facebook" do %>
+          <div class="my-button">
+            <i class="fi-social-facebook"></i><span>Sign up with Facebook</span>
+          </div>
+        <% end %>
   </div>
 
 </div>

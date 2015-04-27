@@ -19,9 +19,11 @@
   </div>
   <div class="large-5 medium-10 columns">
         <h3>Or: </h3>
-        <div class="my-button">
-        <i class="fi-social-facebook"></i><span>Login with Facebook</span>
-        </div>
+        <%= link_to "/auth/facebook" do %>
+          <div class="my-button">
+            <i class="fi-social-facebook"></i><span>Login with Facebook</span>
+          </div>
+        <% end %>
   </div>
 
 </div>

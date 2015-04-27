@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :require_user
+  before_action :require_user, only: [:loggedin]
 
   def index
   end
