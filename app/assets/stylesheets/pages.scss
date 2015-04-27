@@ -4,6 +4,7 @@
 
 $lato: 'Lato', sans-serif;
 
+// all pages
 * {
   box-sizing: border-box;
 }
@@ -59,6 +60,7 @@ h1, h2, h3, h4, h5 {
   padding-bottom: 40px;
 }
 
+// front page
 .pages.index {
   background: url('retina_wood.png');
   
@@ -240,6 +242,7 @@ h1, h2, h3, h4, h5 {
 
 }
 
+// logged in page
 .pages.loggedin {
   background: url('retina_wood.png');
 
@@ -321,7 +324,7 @@ h1, h2, h3, h4, h5 {
 }
 
 
-
+// media queries for front page
 @media only screen and (max-width: 64em) { 
   .pages.index {
 

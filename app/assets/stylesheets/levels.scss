@@ -4,6 +4,7 @@
 
 $lato: 'Lato', sans-serif;
 
+// accordion overrides
 .accordion-navigation a {
   background: #4c4c4c !important;
   padding-bottom: 10px !important;
@@ -18,7 +19,7 @@ $lato: 'Lato', sans-serif;
   border-top: 5px solid #fff;
 }
 
-
+// custom card panel styles
 .panel-square {
   background-color: white;
   width: 300px;
@@ -56,7 +57,7 @@ $lato: 'Lato', sans-serif;
 
 }
 
-
+// levels index
 .levels.index {
     background: url('retina_wood.png');
 
@@ -112,7 +113,7 @@ $lato: 'Lato', sans-serif;
 
 }
 
-
+// levels show
 
 .levels.show {
   font-family: "courier new";
@@ -192,6 +193,8 @@ $lato: 'Lato', sans-serif;
   }
 }
 
+
+// levels list
 .levels.list {
   h3 {
     font-family: $lato;
@@ -225,6 +228,7 @@ $lato: 'Lato', sans-serif;
   }
 }
 
+// levels new
 .levels.new {
   .header {
     padding-top: 20px;
@@ -234,6 +238,7 @@ $lato: 'Lato', sans-serif;
   }
 }
 
+// levels edit
 .levels.edit {
   @extend .levels.new;
 }

@@ -1,5 +1,6 @@
 $lato: 'Lato', sans-serif;
 
+// sign up page
 .users.new {
     background: url('retina_wood.png');
     .signin-header {
@@ -48,6 +49,7 @@ $lato: 'Lato', sans-serif;
     }
 }
 
+// high score page
 .users.show {
   background: url('retina_wood.png');
 
@@ -133,6 +135,7 @@ $lato: 'Lato', sans-serif;
 
 }
 
+// edit user page
 .users.edit {
   .header {
     padding-top: 20px;
@@ -148,7 +151,6 @@ $lato: 'Lato', sans-serif;
 
 @media only screen and (max-width: 64em) { 
   .users.new {
-
      .signup-header {
       margin-top: 0;
     }

@@ -281,7 +281,7 @@ $(".levels.show").ready(function() {
 					hid.innerHTML = "";
 					hid2.innerHTML = "|";
 					roundCounter++;
-					// counter always adds one at the end of this same function
+			
 					counter = -1;
 				}
 				else{
