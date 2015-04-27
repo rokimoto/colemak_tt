@@ -256,7 +256,7 @@ $(".levels.show").ready(function() {
 			}
 			if (roundCounter === 0) {
 
-				if (counter == ex.innerHTML.length-1 && !ex2) {
+				if (counter === ex.innerHTML.length-1 && !ex2) {
 
 						if (ex.innerHTML[counter] == letter) {
 							inn.innerHTML += letter;
@@ -271,7 +271,7 @@ $(".levels.show").ready(function() {
 
 				}
 
-				else if (counter == ex.innerHTML.length-1) {
+				else if (counter === ex.innerHTML.length-1) {
 					if (letter == " ") {
 						inn.innerHTML += "<span class='block'>`</span>";
 					}
@@ -295,7 +295,7 @@ $(".levels.show").ready(function() {
 				}
 			}
 			else if (roundCounter === 1) {
-				if (counter == ex2.innerHTML.length-1 && !ex3) {
+				if (counter === ex2.innerHTML.length-1 && !ex3) {
 
 						if (ex2.innerHTML[counter] == letter) {
 							inn2.innerHTML += letter;
@@ -308,7 +308,7 @@ $(".levels.show").ready(function() {
 						calculateErrors();
 
 				}
-				else if (counter == ex2.innerHTML.length-1) {
+				else if (counter === ex2.innerHTML.length-1) {
 					if (letter == " ") {
 						inn2.innerHTML += "<span class='block'>`</span>";
 					}
@@ -331,7 +331,7 @@ $(".levels.show").ready(function() {
 				}
 			}
 			else if (roundCounter === 2) {
-				if (counter == ex3.innerHTML.length-1 && !ex4) {
+				if (counter === ex3.innerHTML.length-1 && !ex4) {
 
 						if (ex3.innerHTML[counter] == letter) {
 							inn3.innerHTML += letter;
@@ -344,7 +344,7 @@ $(".levels.show").ready(function() {
 						calculateErrors();
 
 				}
-				else if (counter == ex3.innerHTML.length-1) {		
+				else if (counter === ex3.innerHTML.length-1) {		
 					if (letter == " ") {
 						inn3.innerHTML += "<span class='block'>`</span>";
 					}
@@ -368,8 +368,7 @@ $(".levels.show").ready(function() {
 				}
 			}
 			else if (roundCounter === 3) {
-				if (counter == ex4.innerHTML.length-1 && !ex5) {
-					// if (!ex5) {
+				if (counter === ex4.innerHTML.length-1 && !ex5) {
 						if (ex4.innerHTML[counter] == letter) {
 							inn4.innerHTML += letter;
 						}
@@ -379,7 +378,6 @@ $(".levels.show").ready(function() {
 						hid4.innerHTML = "";
 						clearTimeout(clockRun);
 						calculateErrors();
-					// }
 				}
 				else if (counter == ex4.innerHTML.length-1) {		
 					if (letter == " ") {
@@ -406,7 +404,7 @@ $(".levels.show").ready(function() {
 			}
 
 			else if (roundCounter === 4) {
-				if (counter == ex5.innerHTML.length-1 && !ex6) {
+				if (counter === ex5.innerHTML.length-1 && !ex6) {
 					// if (!ex6) {
 						if (ex5.innerHTML[counter] == letter) {
 							inn5.innerHTML += letter;
@@ -471,6 +469,7 @@ $(".levels.show").ready(function() {
 		// calculates how many errors
 		function calculateErrors() {
       console.log("calculate");
+      console.log(counter);
 			var errors = 0;
 			var realChars = $(ex).text();
 			var inputChars = $(inn).text();

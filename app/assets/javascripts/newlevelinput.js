@@ -1,8 +1,5 @@
 $(".levels.new").ready(function() {
 
-
-		console.log("hi");
-
 		var formGroup = document.getElementById('formGroup');
 		var newCatText = document.getElementById('newCatText');
 		var selectBox = document.getElementById('level_category_id');
