@@ -4,9 +4,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    flash[:success] = "Welcome to Colemak'd!"
     @user = User.new(user_params)
     if @user.save
+      flash[:success] = "Thank you for joining and welcome to Colemak'd!"
       session[:user_id] = @user.id
       redirect_to pages_loggedin_path
     else

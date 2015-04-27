@@ -224,6 +224,12 @@ $(".levels.show").ready(function() {
     });
     key('shift+/', function(){ 
    	 displayLetter("?"); return false; 
+    });
+      key("shift+9", function(){ 
+     displayLetter("("); return false; 
+    });
+      key("shift+0", function(){ 
+     displayLetter(")"); return false; 
     });   
     key('space', function(){ 
    	 displayLetter(" "); return false; 
@@ -237,7 +243,9 @@ $(".levels.show").ready(function() {
     key(',', function(){ 
      displayLetter(","); return false; 
     });
-
+    key("'", function(){ 
+     displayLetter("'"); return false; 
+    });
 
 		function displayLetter(letter) {
 			if (counter === 0 && roundCounter === 0) {

@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
-      flash[:info] = "Welcome back!"
       session[:user_id] = user.id
       redirect_to pages_loggedin_path
     else
