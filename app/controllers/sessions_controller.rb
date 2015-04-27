@@ -3,12 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    flash[:info] = "Welcome back!"
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
+      flash[:info] = "Welcome back!"
       session[:user_id] = user.id
       redirect_to pages_loggedin_path
     else
+      flash[:alert] = user.errors.full_messages.to_sentence
       render "new"
     end
   end
