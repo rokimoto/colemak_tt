@@ -246,6 +246,9 @@ $(".levels.show").ready(function() {
     key("'", function(){ 
      displayLetter("'"); return false; 
     });
+    key("backspace", function(){ 
+     displayLetter("`"); return false; 
+    });
 
 		function displayLetter(letter) {
 			if (counter === 0 && roundCounter === 0) {
